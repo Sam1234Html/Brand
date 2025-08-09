@@ -1,0 +1,30 @@
+# Base class
+class Device:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def device_info(self):
+        return f"{self.brand} {self.model}"
+
+# Derived class (Inheritance)
+class Smartphone(Device):
+    def __init__(self, brand, model, storage, battery):
+        super().__init__(brand, model)  # Initialize parent class
+        self.storage = storage
+        self.battery = battery
+
+    def call(self, number):
+        print(f"Calling {number}... 📞")
+
+    def charge(self):
+        print(f"{self.device_info()} is charging 🔋")
+
+# Creating objects
+phone1 = Smartphone("Samsung", "Galaxy S24", "256GB", "4500mAh")
+phone2 = Smartphone("Apple", "iPhone 15", "128GB", "4200mAh")
+
+# Using methods
+print(phone1.device_info())
+phone1.call("+254700123456")
+phone2.charge()
